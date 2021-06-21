@@ -1,0 +1,11 @@
+@keyframes backgroundColorPalette{
+    0% {
+      background: $red;
+    }
+    50% {
+      background: $blue;
+    }
+    100% {
+        background: $red;
+      }
+  }

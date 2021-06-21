@@ -291,6 +291,7 @@ section.work {
           line-height: 3rem; } }
     section.work article img {
       border: 1px solid #410F10;
+      cursor: pointer;
       transition: transform .25s ease, box-shadow .25s ease; }
       section.work article img:hover {
         transform: scale(1.05);

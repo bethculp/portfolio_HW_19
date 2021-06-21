@@ -3,10 +3,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="styles/reset.css" rel="stylesheet" type="text/css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Roboto:wght@300;500&display=swap" rel="stylesheet"> 
-    <link href="styles/styles.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="styles/styles.css" rel="stylesheet" type="text/css">
     <title>Beth Culp</title>
 </head>
 <body class="home">
@@ -15,7 +15,7 @@
         
         <section class="hero">
             <div class="container">
-                <div class="image animate__animated animate__rotateInDownLeft animate__fadeIn">
+                <div class="image wow animate__animated animate__rotateInDownLeft animate__fadeIn">
                     <img class="" src="images/wiggles.png">
                 </div>
                 <div class="content animate__animated animate__fadeInRight">
@@ -32,17 +32,17 @@
         <section class="skills">
             <div class="container">
                 <h1>Areas of Specialization</h1>
-                <div class="skill">
-                    <h2>UX Design</h2>
-                    <p>I have many years of experience creating information architecture and user flows, from globally relevant philanthropic data landscapes, to the online contest registration process for the annual county fair. Whether a big or small project, I am very focused on the holistic experience of the entire application, and finding an answer to every “What if?” scenario while also working within stakeholder goals and requirements.</p>
+                <div class="skill wow animate__animated animate__fadeInDown">
+                    <h2 class="toggle">UX Design</h2>
+                    <p class="toggle-content">I have many years of experience creating information architecture and user flows, from globally relevant philanthropic data landscapes, to the online contest registration process for the annual county fair. Whether a big or small project, I am very focused on the holistic experience of the entire application, and finding an answer to every “What if?” scenario while also working within stakeholder goals and requirements.</p>
                 </div>
-                <div class="skill">
-                    <h2>UI Design</h2>
-                    <p>Over my career as lead designer at a digital agency, as well as UX designer at a nonprofit that maintained multiple digital properties, I’ve become a specialist in creating brand identity,  and designing all types of digital websites and applications interfaces, including: websites for global fundraising causes, data visualization dashboards, multi-tier prospecting applications, and more.  From sketches, to wireframes, to design, I create delightful and beautiful digital experiences using Figma and the Adobe Creative Suite.</p>                
+                <div class="skill wow animate__animated animate__fadeInDown">
+                    <h2 class="toggle">UI Design</h2>
+                    <p class="toggle-content">Over my career as lead designer at a digital agency, as well as UX designer at a nonprofit that maintained multiple digital properties, I’ve become a specialist in creating brand identity,  and designing all types of digital websites and applications interfaces, including: websites for global fundraising causes, data visualization dashboards, multi-tier prospecting applications, and more.  From sketches, to wireframes, to design, I create delightful and beautiful digital experiences using Figma and the Adobe Creative Suite.</p>                
                 </div>
-                <div class="skill">
-                    <h2>Front-end Development</h2>
-                    <p>To me, writing responsive front-end code has always come hand-in-hand with creating designs. I enjoy the intricacies of CSS, and think Sass is just plain fun. I have extensive experience in Wordpress, including contributing to and maintaining a custom parent theme that supported more than 30 child websites. Comfortable with PHP and Javascript, I am able to jump into many different systems and environments seamlessly, with a focus on accessibility in all aspects of the process.</p>                
+                <div class="skill wow animate__animated animate__fadeInDown">
+                    <h2 class="toggle">Front-end Development</h2>
+                    <p class="toggle-content">To me, writing responsive HTML and CSS has always come hand-in-hand with creating designs. I enjoy the logical thinking of CSS, and think SCSS is just plain fun. I have extensive experience in Wordpress, including contributing to and maintaining a custom parent theme that supported more than 30 child websites. Comfortable with PHP and Javascript, I am able to jump into many different systems and environments seamlessly, with a focus on accessibility in all aspects of the process.</p>                
                 </div>
             </div>
         </section>
@@ -119,4 +119,9 @@
     </main>
     <?php include('inc/footer.php');?>
 </body>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+<script src="js/index.js"></script>
 </html>

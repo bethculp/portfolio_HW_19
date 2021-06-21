@@ -5,8 +5,8 @@
     <link href="styles/reset.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Roboto:wght@300;500&display=swap" rel="stylesheet"> 
-    <link href="styles/styles.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="styles/styles.css" rel="stylesheet" type="text/css">
     <title>Beth Culp</title>
 </head>
 <body class="home">
@@ -32,7 +32,7 @@
         
         <section class="hero">
             <div class="container">
-                <div class="image animate__animated animate__rotateInDownLeft animate__fadeIn">
+                <div class="image wow animate__animated animate__rotateInDownLeft animate__fadeIn">
                     <img class="" src="images/wiggles.png">
                 </div>
                 <div class="content animate__animated animate__fadeInRight">
@@ -49,7 +49,7 @@
         <section class="skills">
             <div class="container">
                 <h1>Areas of Specialization</h1>
-                <div class="skill">
+                <div class="skill wow animate__animated animate__bounceInDown">
                     <h2>UX Design</h2>
                     <p>I have many years of experience creating information architecture and user flows, from globally relevant philanthropic data landscapes, to the online contest registration process for the annual county fair. Whether a big or small project, I am very focused on the holistic experience of the entire application, and finding an answer to every “What if?” scenario while also working within stakeholder goals and requirements.</p>
                 </div>
@@ -147,5 +147,9 @@
         </div>
         <div class="bg-image"></div>
     </footer>
+    <script src="js/wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
 </body>
 </html>

@@ -1,3 +1,3 @@
 $('.toggle').on("click", function(){
-    $(this).parent().find('.toggle-content').fadeToggle();
+    $(this).parent().toggleClass('open').find('.toggle-content').fadeToggle();
 });

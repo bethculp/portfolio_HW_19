@@ -119,19 +119,17 @@ img {
 
 /*HEADER*/
 header {
-  border-bottom: 0.25rem solid #0177BF; }
+  border-bottom: 0.25rem solid #0177BF;
+  /*MOBILE NAV*/ }
   header .container {
     display: flex;
     align-items: center;
     padding: 0.5rem 1.5rem; }
-    @media (min-width: 768px) {
-      header .container {
-        padding: 1rem 1.5rem; } }
   header #logo {
     width: 30%; }
     @media (min-width: 481px) {
       header #logo {
-        width: 10%; } }
+        width: 12%; } }
     header #logo svg {
       fill: #CC483E;
       transition: fill ease 0.65s; }
@@ -171,18 +169,29 @@ section.hero {
     @media (min-width: 768px) {
       section.hero .container > *:first-child {
         text-align: center; } }
-  section.hero p {
+  section.hero h2 {
     font-size: 1.333rem;
-    line-height: 1.5rem;
-    font-family: "Oswald", sans-serif; }
+    line-height: 1.5rem; }
     @media (min-width: 768px) {
-      section.hero p {
+      section.hero h2 {
         font-size: 1.777rem;
         line-height: 2.5rem; } }
     @media (min-width: 1024px) {
+      section.hero h2 {
+        font-size: 2.369rem;
+        line-height: 3rem; } }
+  section.hero p {
+    font-size: 1.777rem;
+    line-height: 2.5rem;
+    font-family: "Oswald", sans-serif; }
+    @media (min-width: 768px) {
       section.hero p {
         font-size: 2.369rem;
         line-height: 3rem; } }
+    @media (min-width: 1024px) {
+      section.hero p {
+        font-size: 3.157rem;
+        line-height: 4rem; } }
   section.hero .buttons {
     margin-top: 1rem;
     display: flex;
@@ -223,32 +232,6 @@ section.work .container > h1 {
 section.skills {
   background: #0177BF;
   color: #fff; }
-  section.skills .container {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(4, auto);
-    gap: 2rem;
-    transition: height 1s ease; }
-    section.skills .container .skill {
-      display: block; }
-      section.skills .container .skill.animate__animated.animate__fadeInDown:nth-of-type(2) {
-        animation-delay: .5s; }
-      section.skills .container .skill.animate__animated.animate__fadeInDown:nth-of-type(3) {
-        animation-delay: 1s; }
-    @media (min-width: 768px) {
-      section.skills .container .skill {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        grid-template-rows: auto;
-        gap: 2rem; } }
-    @media (min-width: 1024px) {
-      section.skills .container {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto auto; }
-        section.skills .container h1 {
-          grid-area: 1 / 1 / 1 / 4; }
-        section.skills .container .skill {
-          display: block; } }
   section.skills h2 {
     font-size: 1.333rem;
     line-height: 1.5rem;
@@ -262,6 +245,39 @@ section.skills {
       section.skills h2 {
         font-size: 2.369rem;
         line-height: 3rem; } }
+  section.skills .container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, auto);
+    gap: 2rem;
+    transition: all .5s ease; }
+  section.skills .skill {
+    display: block;
+    text-align: center;
+    transition: all .5s ease; }
+    section.skills .skill .heading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: .5em; }
+    section.skills .skill .fas {
+      transition: transform 0.5s ease; }
+    section.skills .skill.animate__animated.animate__fadeInDown:nth-of-type(2) {
+      animation-delay: .5s; }
+    section.skills .skill.animate__animated.animate__fadeInDown:nth-of-type(3) {
+      animation-delay: 1s; }
+    section.skills .skill.open .fas {
+      transform: rotate(180deg); }
+  @media (min-width: 481px) {
+    section.skills .container {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto; }
+      section.skills .container h1 {
+        grid-area: 1 / 1 / 1 / 4; }
+    section.skills .skill {
+      display: block; }
+    section.skills .btn {
+      display: none; } }
 
 section.work {
   border-bottom: 0.25rem solid #0177BF; }
@@ -270,7 +286,8 @@ section.work {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 1.5rem 0; }
+    margin-top: 2rem;
+    padding-bottom: 2rem; }
     section.work article > * {
       width: 100%;
       text-align: center; }
@@ -279,32 +296,29 @@ section.work {
         width: calc(50% - 1em);
         text-align: left; } }
     section.work article h1 {
-      font-size: 1.333rem;
-      line-height: 1.5rem; }
+      font-size: 1.777rem;
+      line-height: 2.5rem; }
       @media (min-width: 768px) {
-        section.work article h1 {
-          font-size: 1.777rem;
-          line-height: 2.5rem; } }
-      @media (min-width: 1024px) {
         section.work article h1 {
           font-size: 2.369rem;
           line-height: 3rem; } }
+      @media (min-width: 1024px) {
+        section.work article h1 {
+          font-size: 3.157rem;
+          line-height: 4rem; } }
     section.work article img {
       border: 1px solid #410F10;
       cursor: pointer;
-      transition: transform .25s ease, box-shadow .25s ease; }
+      transition: transform .5s ease, box-shadow .5s ease; }
       section.work article img:hover {
-        transform: scale(1.05);
-        box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
-        -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
-        -moz-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.3); }
+        transform: scale(1.02); }
     section.work article .tags {
       font-weight: 500; }
     section.work article .content {
       padding-top: 1rem;
       margin-bottom: 1rem; }
       section.work article .content * + * {
-        margin-top: 0.5rem; }
+        margin-top: 1.5rem; }
       @media (min-width: 768px) {
         section.work article .content {
           padding-top: 0; } }
@@ -318,7 +332,7 @@ footer {
   @media (min-width: 481px) {
     footer {
       display: grid;
-      grid-template-columns: 1fr 450px 1fr; }
+      grid-template-columns: 25% 1fr 25%; }
       footer .bg-image {
         display: block;
         background-size: auto 100%;
@@ -329,19 +343,11 @@ footer {
       footer > div:last-of-type {
         background-image: url(../images/wiggle-right-bottom.png);
         background-position: left bottom; } }
-  @media (min-width: 1024px) {
-    footer {
-      display: block;
-      background-image: url(../images/wiggle-left-bottom.png), url(../images/wiggle-right-bottom.png);
-      background-position: left bottom, right bottom;
-      background-repeat: no-repeat, no-repeat;
-      background-size: contain; }
-      footer .bg-image {
-        display: none; } }
   footer .container {
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    text-align: center; }
     footer .container > * + * {
       margin-top: 1.5rem; }
   footer h1 {

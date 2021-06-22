@@ -78,14 +78,14 @@ header{
         display:flex;
         align-items:center;
         padding:$space-small $space-large;
-        @include breakpoint(md){
-            padding:$space-medium $space-large;
-        }
+        // @include breakpoint(md){
+        //     padding:$space-medium $space-large;
+        // }
     }
     #logo{
         width:30%;
         @include breakpoint(sm){
-            width:10%;
+            width:12%;
         }
         svg{
             fill:$red;
@@ -108,6 +108,8 @@ header{
             }
         }
     }
+    /*MOBILE NAV*/
+
 }
 
 
@@ -122,8 +124,11 @@ section.hero{
             }
         }
     }
-    p{
+    h2{
         @include heading-md;
+    }
+    p{
+        @include heading-lg;
         font-family: $primary-font;
     }
     .buttons{
@@ -162,48 +167,84 @@ section.work{
 section.skills{
     background:$blue;
     color:$white;
-    
-    .container{
-        display:grid;
-        grid-template-columns: 100%;
-        grid-template-rows: repeat(4, auto);
-        gap: $space-xlarge;
-        transition:height 1s ease;
-        .skill{
-            display:block;
-            &.animate__animated.animate__fadeInDown{
-                &:nth-of-type(2){
-                    animation-delay: .5s;
-                }
-                &:nth-of-type(3){
-                    animation-delay: 1s;
-                }
-            }
-        }
-        @include breakpoint(md){
-            .skill{
-                display:grid;
-                grid-template-columns:1fr 3fr;
-                grid-template-rows:auto;
-                gap: $space-xlarge;
-            }
-        }
-        @include breakpoint(lg){
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto auto;
-            h1{
-                grid-area: 1 / 1 / 1 / 4;
-            }
-            .skill{
-                display:block;
-            }
-        }
-    }
     h2{
         @include heading-md;
         padding-bottom:$space-small;
         text-align: center;
     }
+    .container{
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(4, auto);
+        gap: $space-xlarge;
+        transition:all .5s ease;
+    }
+    .skill{
+        display:block;
+        text-align: center;
+        transition:all .5s ease;
+        .heading{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .5em;
+        }
+        .fas{
+            // display: none;
+            transition:transform 0.5s ease;
+        }
+        // .toggle-content{
+        //     display:none;
+        // }
+    
+        &.animate__animated.animate__fadeInDown{
+            &:nth-of-type(2){
+                animation-delay: .5s;
+            }
+            &:nth-of-type(3){
+                animation-delay: 1s;
+            }
+        }
+        &.open{
+            .fas{
+                transform: rotate(180deg);
+            }
+        }
+    }
+    // @include breakpoint(sm){
+    //     .skill{
+    //         display:grid;
+    //         grid-template-columns:1fr 3fr;
+    //         grid-template-rows:auto;
+    //         gap: $space-xlarge;
+    //     }
+    // }
+    @include breakpoint(sm){
+        .container{
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            h1{
+                grid-area: 1 / 1 / 1 / 4;
+            }
+        }
+        .skill{
+            display:block;
+        }
+        .btn{
+            display:none;
+        }
+    }
+    // @include breakpoint(md){
+    //     .skill{
+    //         .fas{
+    //             display: block;
+    //         }
+    //         .toggle-content{
+    //             text-align:left;
+    //         }
+    //     }
+    // }
+    
     
 
 }
@@ -212,19 +253,20 @@ section.work{
     border-bottom: $blue-border-bottom;
     article{
         @include half-layout;
-        margin:$space-large 0;
+        margin-top:$space-xlarge;
+        padding-bottom:$space-xlarge;
         h1{
-            @include heading-md;
+            @include heading-lg;
         }
         img{
             border:1px solid $text-color;
             cursor:pointer;
-            transition:transform .25s ease, box-shadow .25s ease;
+            transition:transform .5s ease, box-shadow .5s ease;
             &:hover{
-                transform: scale(1.05);
-                box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.3);
-                -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.3);
-                -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.3);
+                transform: scale(1.02);
+                // box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.1);
+                // -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.1);
+                // -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.1);
             }
         }
         .tags{
@@ -232,7 +274,7 @@ section.work{
         }
         .content{
             * + *{
-                margin-top:$space-small;
+                margin-top:$space-large;
             }
             padding-top:$space-medium;
             margin-bottom:$space-medium;
@@ -255,7 +297,7 @@ footer{
     background-image:none;
     @include breakpoint(sm){
         display:grid;
-        grid-template-columns: 1fr 450px 1fr;
+        grid-template-columns: 25% 1fr 25%;
         .bg-image{
             display:block;
             background-size:auto 100%;
@@ -273,19 +315,20 @@ footer{
     
     
     @include breakpoint(lg){
-        .bg-image{
-            display:none;
-        }
-        display:block;
-        background-image: url(../images/wiggle-left-bottom.png), url(../images/wiggle-right-bottom.png);
-        background-position: left bottom, right bottom;
-        background-repeat: no-repeat, no-repeat;
-        background-size:contain;
+        // .bg-image{
+        //     display:none;
+        // }
+        // display:block;
+        // background-image: url(../images/wiggle-left-bottom.png), url(../images/wiggle-right-bottom.png);
+        // background-position: left bottom, right bottom;
+        // background-repeat: no-repeat, no-repeat;
+        // background-size:contain;
     }
     .container{
         display:flex;
         flex-direction:column;
         align-items:center;
+        text-align: center;
         > * + *{
             margin-top:$space-large;
         }
